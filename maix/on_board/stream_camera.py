@@ -71,7 +71,7 @@ while True:
             except Exception as e:
                 print("send fail:", e)
                 time.sleep()
-                err += 1
+                errors += 1
                 continue
             count += 1
 
