@@ -19,6 +19,7 @@ def esp32_init(force=False):
             if isinstance(val, network.ESP32_SPI):
                 exists = True
                 print("An ESP32 device was already setup under name: ", key)
+                esp32 = val
 
     # if not initialized or we want to re-initialize
     if not exists:
