@@ -1,8 +1,8 @@
 import network
-import wifi  # "wifi.py" holds the WIFI_SSID and WIFI_PASSWD values
+import net_info  # "net_info.py" holds the WIFI_SSID and WIFI_PASSWD values
 
-WIFI_SSID = wifi.WIFI_SSID
-WIFI_PASSWD = wifi.WIFI_PASSWD
+WIFI_SSID = net_info.WIFI_SSID
+WIFI_PASSWD = net_info.WIFI_PASSWD
 
 # IO map for ESP32 on Maixduino
 fm.register(25, fm.fpioa.GPIOHS10)  # cs

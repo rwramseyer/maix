@@ -1,3 +1,2 @@
 .idea/
-wifi.py
-server.py
+net_info.py
