@@ -40,7 +40,6 @@ while True:
         except Exception as e:
             print("Error:", e)
             s.close()
-            continue
         s.settimeout(5)
 
         count = 0
@@ -63,14 +62,21 @@ while True:
             try:
                 send_len = s.send(img_bytes)
                 if send_len == 0:
+                    print("failed")
                     raise Exception("send fail")
             except OSError as e:
-                if e.args[0] == 128:
+                if e.args[0] == 32:
+                    print("no connection")
+                    errors += 1
+                    continue
+                elif e.args[0] == 128:
                     print("Connection closed")
                     break
+                else:
+                    print("Unknown error", e)
             except Exception as e:
                 print("send fail:", e)
-                time.sleep()
+                # time.sleep()
                 errors += 1
                 continue
             count += 1
